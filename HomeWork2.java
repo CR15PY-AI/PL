@@ -18,16 +18,16 @@ public class main{
 
         double result;
 
-        if (operator.equals('+')) {
+        if (operator =='+') {
             result = x + y;
             System.out.println(result);
-        } else if (operator.equals('-')) {
+        } else if (operator =='-') {
             result = x - y;
             System.out.println(result);
-        } else if (operator.equals('*')) {
+        } else if (operator == '*') {
             result = x * y;
             System.out.println(result);
-        } else if (operator.equals('/')) {
+        } else if (operator == '/') {
             if (y == 0) {
                 System.out.println("Делить на ноль нельзя!!!!!!!!!!!!!!!!!!!!!!!");
             } else {
@@ -38,3 +38,4 @@ public class main{
         }
     }
 }
+
