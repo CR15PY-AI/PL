@@ -91,7 +91,6 @@ public class BattleShip {
             int shipSize = sizes.get(choice - 1);
             System.out.println("Вы выбрали корабль длиной " + shipSize + ". Введите клетки по одной.");
 
-            // Считываем клетки по одной
             List<Coord> cells = new ArrayList<>();
             for (int i = 0; i < shipSize; i++) {
                 System.out.printf("Клетка %d (пример A1): ", i + 1);
@@ -120,7 +119,6 @@ public class BattleShip {
                 continue;
             }
 
-            // Проверки: все в одной линии и подряд
             if (!allInOneLine(cells)) {
                 System.out.println("Клетки не в одной линии. Корабль должен быть в одной строке или столбце. Попробуйте заново.");
                 continue;
@@ -135,8 +133,6 @@ public class BattleShip {
                 System.out.println("Клетки касаются другого корабля или находятся рядом с ним. Размещение запрещено. Попробуйте заново.");
                 continue;
             }
-
-            // Всё хорошо — ставим корабль
             for (Coord co : cells) field[co.r][co.c] = 'O';
             // Уменьшаем счётчик в remaining
             int left = remaining.get(shipSize) - 1;
@@ -152,7 +148,6 @@ public class BattleShip {
         scanner.nextLine();
     }
 
-    // —————————— Парсинг координаты (A1..J10) ——————————
     static Coord parseCoord(String s) {
         if (s == null || s.length() < 2) return null;
         char rch = s.charAt(0);
@@ -169,8 +164,6 @@ public class BattleShip {
         int c = col - 1;
         return new Coord(r, c);
     }
-
-    // —————————— Проверки и утилиты ——————————
 
     static boolean isOccupied(char[][] field, Coord co) {
         return field[co.r][co.c] == 'O';
@@ -230,7 +223,6 @@ public class BattleShip {
         return true;
     }
 
-    // —————————— Печать поля (полное и маска) ——————————
 
     static void printFull(char[][] f) {
         System.out.print("   ");
@@ -312,3 +304,4 @@ public class BattleShip {
         }
     }
 }
+
