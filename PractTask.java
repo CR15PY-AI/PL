@@ -64,7 +64,21 @@ public class PractTask {
 
         return result;
     }
+    public static String task17(String s) {
+        int letters = 0;
+        int digits = 0;
+        for (int i=0; i < s.length(); i++){
+            char ch = s.charAt(i);
+            if (Character.isLetter(ch)){
+                letters++;
+            } else if (Character.isDigit(ch)){
+                digits++;
+            }
+        }
+        return Arrays.toString(new int[]{letters, digits});
+    }
 
 }
+
 
 
